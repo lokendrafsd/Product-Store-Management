@@ -70,7 +70,7 @@ public class ProductController {
 	/**
 	 * @Def: Method to create/add Product
 	 * 
-	 * @Request pitstopRequest
+	 * @Request ProductRequest
 	 * @Response: Success = HttpStatus(200), ProductRequest
 	 */
 	@PostMapping("/product")
