@@ -1,0 +1,45 @@
+<div class="card col-sm-12 col-md-5 mx-auto px-5 py-4 bg-light">
+<h3>Create Product</h3>
+<hr>
+<div [hidden]="submitted" class="bg-light">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Product Name:</label>
+      <input type="text" class="form-control" id="productName" required [(ngModel)]="product.productName" name="productName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Product Description:</label>
+      <input type="text" class="form-control" id="productDesc" required [(ngModel)]="product.productDesc" name="productDesc">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Product Category:</label>
+      <input type="text" class="form-control" id="productCategory" required [(ngModel)]="product.productCategory" name="productCategory">
+    </div>
+
+    
+    <div class="form-group">
+        <label for="name">Product Quantity:</label>
+        <input type="text" class="form-control" id="productQuantity" required [(ngModel)]="product.productQuantity" name="productQuantity">
+      </div>
+
+      
+    <div class="form-group">
+        <label for="name">Product Price:</label>
+        <input type="text" class="form-control" id="productPrice" required [(ngModel)]="product.productPrice" name="productPrice">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Currency: </label>
+        <input type="text" class="form-control" id="productPriceCurrency" required [(ngModel)]="product.productPriceCurrency" name="productPriceCurrency">
+      </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted" class="alert alert-success" role="alert">
+  <h4>Product Added Successfully!</h4>
+</div>
+</div>

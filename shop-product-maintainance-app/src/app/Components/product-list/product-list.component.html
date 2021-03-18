@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading row">
+      <h2 class="col-sm-12 col-md-8">Product Portal</h2>
+      <div class="input-group col-sm-12 col-md-4 mb-3">
+        <input type="text" class="form-control"  [(ngModel)]="query"  placeholder="Search for product" aria-label="Search for product" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">Search</span>
+        </div>
+      </div>
+    </div>
+    
+    <hr>
+    <div class="panel-body"> 
+      <div [hidden]="!deleteSuccessful" class="alert alert-danger" role="alert">
+        <h4>Product Deleted Successfully!</h4>
+      </div>
+        <div class="row row-cols-1 row-cols-md-4 g-4 ">
+            <div class="col" *ngFor="let product of product | async  | productSearch: query "> 
+          <div class="card shadow-sm mb-3" >
+                  <div class="card-body">
+                    <h5 class="card-title ">{{product.productName | uppercase}}</h5>
+                    <p class="card-text text-justify"><strong>Description: </strong>{{product.productDesc}}</p>
+                    <p class="h5">{{product.productPrice}} {{product.productPriceCurrency}}/-</p>
+                    <p class="card-text"><small class="text-muted">Category: {{product.productCategory}}</small></p>
+                </div>
+                <div class="card-footer p-0">
+                  <button (click)="productDetails(product.id)" class="btn btn-link float-left" style="margin-left: 10px">View Details...</button>
+      
+                  <button (click)="deleteProduct(product.id)" class="btn btn-link text-danger float-right">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                      <button (click)="updateProduct(product.id)" class="btn btn-link float-right mx-1" style="margin-left: 10px">
+                          Edit                
+                      </button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>

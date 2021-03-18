@@ -1,0 +1,26 @@
+
+.panel-body{
+    height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* width */
+.panel-body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  .panel-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .panel-body::-webkit-scrollbar-thumb {
+    background: rgba(18, 19, 19, 0.788);
+  }
+  
+  /* Handle on hover */
+  .panel-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
